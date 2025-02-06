@@ -58,6 +58,8 @@ namespace AuthenticationService
 
         public User ValidateToken( string token)
         {
+            //https://github.com/canarysuser/CapgeminiApp 
+
             var secretKey = Encoding.UTF8.GetBytes(_appSettings.AppSecret);
             //Generate the security key using the secret key
             SymmetricSecurityKey key = new SymmetricSecurityKey(secretKey);
@@ -85,7 +87,7 @@ namespace AuthenticationService
                 item = _repository.GetUserDetails(email);
                 return item;
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { }                
 
             return item;
         }
